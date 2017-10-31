@@ -16,4 +16,12 @@ describe Oystercard do
       expect(subject.balance).to eq 5
     end
   end
+
+  context 'topping up' do
+    it "raises and error when amount is above limit" do
+      maximum_balance = Oystercard::CREDIT_LIMIT
+      subject.top_up(maximum_balance)
+      expect { subject.top_up 1 }.to raise_error RuntimeError, "amount above #{maximum_balance}"
+    end
+  end
 end
