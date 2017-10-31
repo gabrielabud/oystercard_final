@@ -31,8 +31,8 @@ describe Oystercard do
 
   describe 'raises an error' do
   it "raises an error when insufficient balance" do
-    my_card = Oystercard.new(5)
-    expect { my_card.deduct 6 }.to raise_error RuntimeError, "Not enough money for the journey"
+    subject.top_up(20)
+    expect { subject.deduct 21 }.to raise_error RuntimeError, "Not enough money for the journey"
   end
 end
 end

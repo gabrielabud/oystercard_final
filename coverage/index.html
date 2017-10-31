@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-31T14:36:52+00:00">2017-10-31T14:36:52+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-31T14:48:43+00:00">2017-10-31T14:48:43+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.17
+         2.26
        </span>
     </span> hits/line)
   </h2>
@@ -57,7 +57,7 @@
         <td>18</td>
         <td>17</td>
         <td>1</td>
-        <td>3.1</td>
+        <td>3.2</td>
       </tr>
       
       <tr>
@@ -67,7 +67,7 @@
         <td>22</td>
         <td>22</td>
         <td>0</td>
-        <td>1.4</td>
+        <td>1.5</td>
       </tr>
       
     </tbody>
@@ -166,14 +166,14 @@
           <code class="ruby">  def top_up(amount)</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="12">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="12">
+          <span class="hits">10</span>
           
           <code class="ruby">    raise RuntimeError, &quot;amount above #{CREDIT_LIMIT}&quot; if overloads?(amount)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="13">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="9" data-linenumber="13">
+          <span class="hits">9</span>
           
           <code class="ruby">    @balance += amount</code>
         </li>
@@ -238,8 +238,8 @@
           <code class="ruby">  def overloads?(amount)</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="24">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="24">
+          <span class="hits">10</span>
           
           <code class="ruby">    @balance+amount &gt; CREDIT_LIMIT</code>
         </li>
@@ -329,8 +329,8 @@
           <code class="ruby">describe Oystercard do</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="4">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="4">
+          <span class="hits">7</span>
           
           <code class="ruby">  subject(:oystercard) { described_class.new }</code>
         </li>
@@ -512,13 +512,13 @@
         <li class="covered" data-hits="1" data-linenumber="34">
           <span class="hits">1</span>
           
-          <code class="ruby">    my_card = Oystercard.new(5)</code>
+          <code class="ruby">    subject.top_up(20)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="35">
           <span class="hits">2</span>
           
-          <code class="ruby">    expect { my_card.deduct 6 }.to raise_error RuntimeError, &quot;Not enough money for the journey&quot;</code>
+          <code class="ruby">    expect { subject.deduct 21 }.to raise_error RuntimeError, &quot;Not enough money for the journey&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
