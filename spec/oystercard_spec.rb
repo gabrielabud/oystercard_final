@@ -41,14 +41,20 @@ describe Oystercard do
 
   describe 'touch in' do
     it 'change status after touching in' do
-      card=Oystercard.new
+      minimum_bal = Oystercard::MINIMUM_BALANCE
+      card=Oystercard.new(minimum_bal)
       expect(card.touch_in).to eq true
+    end
+    it 'raises an error at touch in if minimum balance is less than 1' do
+      card = Oystercard.new
+      expect { card.touch_in }.to raise_error RuntimeError, "Balance less than the minimum fare"
     end
   end
 
   describe 'touch out' do
-    it 'change status after touching out' do
-      card=Oystercard.new
+    it 'changes status after touching out' do
+      minimum_bal = Oystercard::MINIMUM_BALANCE
+      card=Oystercard.new(minimum_bal)
       card.touch_in
       expect(card.touch_out).to eq false
     end

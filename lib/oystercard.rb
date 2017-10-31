@@ -2,6 +2,7 @@ class Oystercard
 # Oystercards objects
   attr_reader :balance, :limit, :in_journey
   CREDIT_LIMIT=120
+  MINIMUM_BALANCE=1
 
   def initialize(balance = 0,limit=CREDIT_LIMIT)
     @in_journey=false
@@ -21,6 +22,7 @@ class Oystercard
   end
 
   def touch_in
+    raise RuntimeError, "Balance less than the minimum fare" if insufficient_balance?
     @in_journey=true
   end
 
@@ -34,9 +36,12 @@ private
     @balance+amount > CREDIT_LIMIT
    end
 
-def insufficient_money?(fare)
+   def insufficient_money?(fare)
     @balance - fare < 0
-end
+  end
 
+  def insufficient_balance?
+    @balance < MINIMUM_BALANCE
+  end
 
 end
