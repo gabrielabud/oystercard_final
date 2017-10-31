@@ -25,14 +25,32 @@ describe Oystercard do
     end
   end
 
-  describe '#deduct' do
-    it { is_expected.to respond_to :deduct }
+  describe 'deduct' do
+    it "raises an error when insufficient balance" do
+      subject.top_up(20)
+      expect { subject.deduct 21 }.to raise_error RuntimeError, "Not enough money for the journey"
+    end
   end
 
-  describe 'raises an error' do
-  it "raises an error when insufficient balance" do
-    subject.top_up(20)
-    expect { subject.deduct 21 }.to raise_error RuntimeError, "Not enough money for the journey"
+  describe 'journey status' do
+    it 'initial status not in journey' do
+      card=Oystercard.new
+      expect(card.in_journey).to eq false
+    end
   end
-end
+
+  describe 'touch in' do
+    it 'change status after touching in' do
+      card=Oystercard.new
+      expect(card.touch_in).to eq true
+    end
+  end
+
+  describe 'touch out' do
+    it 'change status after touching out' do
+      card=Oystercard.new
+      card.touch_in
+      expect(card.touch_out).to eq false
+    end
+  end
 end

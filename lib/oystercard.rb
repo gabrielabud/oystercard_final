@@ -1,8 +1,10 @@
 class Oystercard
 # Oystercards objects
-  attr_reader :balance, :limit
+  attr_reader :balance, :limit, :in_journey
   CREDIT_LIMIT=120
+
   def initialize(balance = 0,limit=CREDIT_LIMIT)
+    @in_journey=false
     @balance = 0
     @limit=limit
     top_up(balance)
@@ -16,6 +18,14 @@ class Oystercard
   def deduct(fare)
     raise RuntimeError, "Not enough money for the journey" if insufficient_money?(fare)
     @balance -= fare
+  end
+
+  def touch_in
+    @in_journey=true
+  end
+
+  def touch_out
+    @in_journey=false
   end
 
 private
