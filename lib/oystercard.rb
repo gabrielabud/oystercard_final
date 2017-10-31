@@ -13,10 +13,20 @@ class Oystercard
     @balance += amount
   end
 
+  def deduct(fare)
+    raise RuntimeError, "Not enough money for the journey" if insufficient_money?(fare)
+    @balance -= fare
+  end
+
 private
 
   def overloads?(amount)
     @balance+amount > CREDIT_LIMIT
    end
+
+def insufficient_money?(fare)
+    @balance - fare < 0
+end
+
 
 end

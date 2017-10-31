@@ -17,11 +17,22 @@ describe Oystercard do
     end
   end
 
-  context 'topping up' do
+  context 'raising errors' do
     it "raises and error when amount is above limit" do
       maximum_balance = Oystercard::CREDIT_LIMIT
       subject.top_up(maximum_balance)
       expect { subject.top_up 1 }.to raise_error RuntimeError, "amount above #{maximum_balance}"
     end
   end
+
+  describe '#deduct' do
+    it { is_expected.to respond_to :deduct }
+  end
+
+  describe 'raises an error' do
+  it "raises an error when insufficient balance" do
+    my_card = Oystercard.new(5)
+    expect { my_card.deduct 6 }.to raise_error RuntimeError, "Not enough money for the journey"
+  end
+end
 end
