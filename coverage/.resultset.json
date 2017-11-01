@@ -25,8 +25,6 @@
         1,
         null,
         null,
-        null,
-        1,
         1,
         1,
         1,
@@ -98,8 +96,6 @@
       ],
       "/Users/ipbianco/Projects/Makers/Week_2/Day_3/oystercard2/lib/oystercard.rb": [
         1,
-        null,
-        1,
         1,
         1,
         1,
@@ -130,10 +126,6 @@
         4,
         4,
         4,
-        4,
-        4,
-        4,
-        4,
         null,
         null,
         1,
@@ -165,21 +157,10 @@
         null,
         null
       ],
-      "/Users/ipbianco/Projects/Makers/Week_2/Day_3/oystercard2/lib/station.rb": [
-        1,
-        1,
-        null,
-        1,
-        2,
-        2,
-        null,
-        null
-      ],
       "/Users/ipbianco/Projects/Makers/Week_2/Day_3/oystercard2/spec/station_spec.rb": [
         1,
         null,
         1,
-        null,
         3,
         null,
         1,
@@ -189,10 +170,19 @@
         1,
         1,
         null,
+        null
+      ],
+      "/Users/ipbianco/Projects/Makers/Week_2/Day_3/oystercard2/lib/station.rb": [
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
         null,
         null
       ]
     },
-    "timestamp": 1509572774
+    "timestamp": 1509574994
   }
 }

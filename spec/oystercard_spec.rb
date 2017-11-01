@@ -7,7 +7,7 @@ describe Oystercard do
     allow(station).to receive(:name).and_return('Oxford')
     allow(station).to receive(:zone).and_return(4)
     station
-    }
+  }
 
   describe '#initialize' do
     it 'check if oystercard has a balance equal to 0' do
@@ -20,13 +20,11 @@ describe Oystercard do
       card.top_up(5)
       expect(card.balance).to eq 5
     end
-  end
 
-  context 'raising errors' do
     it 'raises and error when amount is above limit' do
       maximum_balance = Oystercard::CREDIT_LIMIT
       card.top_up(maximum_balance)
-      expect { card.top_up 1 }.to raise_error RuntimeError
+      expect { card.top_up(1) }.to raise_error RuntimeError
     end
   end
 

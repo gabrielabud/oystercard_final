@@ -1,5 +1,3 @@
-require_relative 'station'
-
 class Oystercard
   attr_reader :balance, :limit, :entry_station, :list_of_journeys, :exit_station
   CREDIT_LIMIT = 120
@@ -24,19 +22,15 @@ class Oystercard
     @entry_station = station
     @journey[[station.name, station.zone]] = nil
   end
-
+  
   def touch_out(station)
     deduct(MINIMUM_FARE)
     @exit_station = station
-    en_name = @entry_station.name
-    en_zone = @entry_station.zone
-    ex_name = @exit_station.name
-    ex_zone = @exit_station.zone
-    @journey[[en_name, en_zone]] = [ex_name, ex_zone]
+    @journey[[@entry_station.name, @entry_station.zone]] = [station.name, station.zone]
     @entry_station = nil
     add_to_list
   end
-  
+
   def in_journey?
     !!@entry_station
   end
