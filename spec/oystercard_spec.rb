@@ -2,16 +2,20 @@ require 'oystercard'
 
 describe Oystercard do
   subject(:card) { described_class.new }
-  let(:station) { double :station }
+  let(:station) {
+    station = double(:station)
+    allow(station).to receive(:name).and_return('Oxford')
+    allow(station).to receive(:zone).and_return(4)
+    station
+    }
 
-  describe 'initialize' do
-    it 'Check if oystercard has a balance equal to 0' do
+  describe '#initialize' do
+    it 'check if oystercard has a balance equal to 0' do
       expect(card.balance).to eq(0)
     end
   end
 
   describe '#top_up' do
-    it { is_expected.to respond_to(:top_up) }
     it 'checking top-up' do
       card.top_up(5)
       expect(card.balance).to eq 5
@@ -26,19 +30,19 @@ describe Oystercard do
     end
   end
 
-  describe 'journey status' do
+  describe '#journey status' do
     it 'initial status not in journey' do
       expect(card.in_journey?).to eq false
     end
 
-    it 'in journey after touch in ' do
+    it 'changes status into "in_journey" after touch in' do
       card.top_up(Oystercard::MINIMUM_BALANCE)
       card.touch_in(station)
       expect(card.in_journey?).to eq true
     end
   end
 
-  describe 'touch in' do
+  describe '#touch in' do
     it 'raises an error at touch in if minimum balance is less than 1' do
       expect { card.touch_in(station) }.to raise_error RuntimeError
     end
@@ -50,9 +54,10 @@ describe Oystercard do
     end
   end
 
-  describe 'touch out' do
+  describe '#touch out' do
     it 'changes the balance by the minimum fare' do
       card.top_up(20)
+      card.touch_in(station)
       expect { card.touch_out(station) }.to change {
         card.balance
       }.by(-Oystercard::MINIMUM_FARE)
@@ -67,9 +72,9 @@ describe Oystercard do
 
     it 'remembers exit station on touch out' do
       card.top_up(Oystercard::MINIMUM_BALANCE)
-      card.touch_in('Oxford')
-      card.touch_out('Aldgate')
-      expect(card.exit_station).to eq 'Aldgate'
+      card.touch_in(station)
+      card.touch_out(station)
+      expect(card.exit_station).to eq station
     end
   end
 
@@ -80,9 +85,9 @@ describe Oystercard do
 
     it 'should store a journey' do
       card.top_up(Oystercard::MINIMUM_BALANCE)
-      card.touch_in('Oxford')
-      card.touch_out('Aldgate')
-      expect(card.list_of_journeys).to eq([{ 'Oxford' => 'Aldgate' }])
+      card.touch_in(station)
+      card.touch_out(station)
+      expect(card.list_of_journeys).to eq([{ ['Oxford', 4] => ['Oxford', 4] }])
     end
   end
 end
