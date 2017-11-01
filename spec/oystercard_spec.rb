@@ -2,7 +2,7 @@ require 'oystercard'
 
 describe Oystercard do
   subject(:card) { described_class.new }
-  let(:station) { double (:station)}
+  let(:station) { double :station }
 
   describe 'initialize' do
     it 'Check if oystercard has a balance equal to 0' do
@@ -36,13 +36,11 @@ describe Oystercard do
       card.touch_in(station)
       expect(card.in_journey?).to eq true
     end
-
   end
 
   describe 'touch in' do
-
     it 'raises an error at touch in if minimum balance is less than 1' do
-      expect { card.touch_in(station)}.to raise_error RuntimeError
+      expect { card.touch_in(station) }.to raise_error RuntimeError
     end
 
     it 'remembers entry station on touch in' do
@@ -55,14 +53,36 @@ describe Oystercard do
   describe 'touch out' do
     it 'changes the balance by the minimum fare' do
       card.top_up(20)
-      expect { card.touch_out }.to change { card.balance }.by(-Oystercard::MINIMUM_FARE)
+      expect { card.touch_out(station) }.to change {
+        card.balance
+      }.by(-Oystercard::MINIMUM_FARE)
     end
 
     it 'makes entry station nil on touch out' do
       card.top_up(Oystercard::MINIMUM_BALANCE)
       card.touch_in(station)
-      card.touch_out
+      card.touch_out(station)
       expect(card.entry_station).to eq nil
+    end
+
+    it 'remembers exit station on touch out' do
+      card.top_up(Oystercard::MINIMUM_BALANCE)
+      card.touch_in('Oxford')
+      card.touch_out('Aldgate')
+      expect(card.exit_station).to eq 'Aldgate'
+    end
+  end
+
+  describe '#list_of_journeys' do
+    it 'should have an empty list of journeys by default' do
+      expect(card.list_of_journeys).to eq([])
+    end
+
+    it 'should store a journey' do
+      card.top_up(Oystercard::MINIMUM_BALANCE)
+      card.touch_in('Oxford')
+      card.touch_out('Aldgate')
+      expect(card.list_of_journeys).to eq([{ 'Oxford' => 'Aldgate' }])
     end
   end
 end
