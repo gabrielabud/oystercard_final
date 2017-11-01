@@ -1,12 +1,11 @@
 class Oystercard
 
-  attr_reader :balance, :limit, :in_journey
+  attr_reader :balance, :limit, :entry_station
   CREDIT_LIMIT = 120
   MINIMUM_BALANCE = 1
   MINIMUM_FARE = 1
 
   def initialize(balance = 0, limit = CREDIT_LIMIT)
-    @in_journey = false
     @balance = 0
     @limit = limit
     top_up(balance)
@@ -17,17 +16,20 @@ class Oystercard
     @balance += amount
   end
 
-  def touch_in
+  def touch_in(station)
     message = 'Balance less than the minimum fare'
     raise RuntimeError, message  if insufficient_balance?
-    @in_journey = true
+    @entry_station = station
   end
 
   def touch_out
     deduct(MINIMUM_FARE)
-    @in_journey = false
+    @entry_station = nil
   end
 
+  def in_journey?
+     !(@entry_station == nil)
+  end
 private
 
   def deduct(fare)

@@ -2,6 +2,7 @@ require 'oystercard'
 
 describe Oystercard do
   subject(:card) { described_class.new }
+  let(:station) { double (:station)}
 
   describe 'initialize' do
     it 'Check if oystercard has a balance equal to 0' do
@@ -27,29 +28,41 @@ describe Oystercard do
 
   describe 'journey status' do
     it 'initial status not in journey' do
-      expect(card.in_journey).to eq false
+      expect(card.in_journey?).to eq false
     end
+
+    it 'in journey after touch in ' do
+      card.top_up(Oystercard::MINIMUM_BALANCE)
+      card.touch_in(station)
+      expect(card.in_journey?).to eq true
+    end
+
   end
 
   describe 'touch in' do
-    it 'change status after touching in' do
-      card.top_up(Oystercard::MINIMUM_BALANCE)
-      expect(card.touch_in).to eq true
-    end
+
     it 'raises an error at touch in if minimum balance is less than 1' do
-      expect { card.touch_in }.to raise_error RuntimeError
+      expect { card.touch_in(station)}.to raise_error RuntimeError
+    end
+
+    it 'remembers entry station on touch in' do
+      card.top_up(Oystercard::MINIMUM_BALANCE)
+      card.touch_in(station)
+      expect(card.entry_station).to eq station
     end
   end
 
   describe 'touch out' do
-    it 'changes status after touching out' do
-      card.top_up(Oystercard::MINIMUM_BALANCE)
-      card.touch_in
-      expect(card.touch_out).to eq false
-    end
     it 'changes the balance by the minimum fare' do
       card.top_up(20)
       expect { card.touch_out }.to change { card.balance }.by(-Oystercard::MINIMUM_FARE)
+    end
+
+    it 'makes entry station nil on touch out' do
+      card.top_up(Oystercard::MINIMUM_BALANCE)
+      card.touch_in(station)
+      card.touch_out
+      expect(card.entry_station).to eq nil
     end
   end
 end
