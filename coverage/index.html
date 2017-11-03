@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-03T12:54:49+00:00">2017-11-03T12:54:49+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-11-03T18:28:04+00:00">2017-11-03T18:28:04+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.44
+         2.58
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>6</b> files in total.
-    <b>138</b> relevant lines. 
-    <span class="green"><b>138</b> lines covered</span> and
+    <b>8</b> files in total.
+    <b>220</b> relevant lines. 
+    <span class="green"><b>220</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,21 +53,31 @@
       <tr>
         <td class="strong"><a href="#150fed9f96068916c26f582cc8d9fcc3be922923" class="src_link" title="lib/journey.rb">lib/journey.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>13</td>
-        <td>7</td>
-        <td>7</td>
+        <td>22</td>
+        <td>12</td>
+        <td>12</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>2.1</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#f517110eae54f6be91d762d8e2511294edab9707" class="src_link" title="lib/journeylog.rb">lib/journeylog.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>40</td>
+        <td>25</td>
+        <td>25</td>
+        <td>0</td>
+        <td>5.3</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#2e669812fa3c4854580104dfa764805932f76fd0" class="src_link" title="lib/oystercard.rb">lib/oystercard.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>68</td>
-        <td>43</td>
-        <td>43</td>
+        <td>50</td>
+        <td>30</td>
+        <td>30</td>
         <td>0</td>
-        <td>3.5</td>
+        <td>2.6</td>
       </tr>
       
       <tr>
@@ -83,19 +93,29 @@
       <tr>
         <td class="strong"><a href="#14fc93ffa2a6ad00201df77a25286287ddcbac47" class="src_link" title="spec/journey_spec.rb">spec/journey_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>42</td>
-        <td>23</td>
-        <td>23</td>
+        <td>49</td>
+        <td>28</td>
+        <td>28</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>1.9</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#353e0fe12666e253a9a101f2ddc4fc68e3bf0c3a" class="src_link" title="spec/journeylog_spec.rb">spec/journeylog_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>137</td>
+        <td>72</td>
+        <td>72</td>
+        <td>0</td>
+        <td>2.4</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#5f624e06f5e235ff9c3a6b8315d379aeb16693c1" class="src_link" title="spec/oystercard_spec.rb">spec/oystercard_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>95</td>
-        <td>53</td>
-        <td>53</td>
+        <td>73</td>
+        <td>41</td>
+        <td>41</td>
         <td>0</td>
         <td>2.2</td>
       </tr>
@@ -131,8 +151,8 @@
     <h3>lib/journey.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -164,14 +184,14 @@
           <code class="ruby">  def initialize (entry_station, exit_station)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="5">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="5">
+          <span class="hits">6</span>
           
           <code class="ruby">    @entry_station = entry_station</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="6">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="6">
+          <span class="hits">6</span>
           
           <code class="ruby">    @exit_station = exit_station</code>
         </li>
@@ -194,10 +214,10 @@
           <code class="ruby">  def fare(minimum, penalty)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="10">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="10">
+          <span class="hits">4</span>
           
-          <code class="ruby">    entry_station &amp;&amp; exit_station ? minimum : penalty</code>
+          <code class="ruby">    entry_station &amp;&amp; exit_station ? expected_fare(minimum) : penalty</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -212,7 +232,320 @@
           <code class="ruby"></code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def expected_fare(minimum)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    minimum + zone_charge</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def zone_charge</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    (exit_station.zone - entry_station.zone).abs</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="f517110eae54f6be91d762d8e2511294edab9707">
+  <div class="header">
+    <h3>lib/journeylog.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>25</b> relevant lines. 
+      <span class="green"><b>25</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;./lib/journey&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Journeylog</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :entry_station, :log, :minimum, :penalty</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize(minimum, penalty, start: nil, journeyclass: Journey)</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="7">
+          <span class="hits">15</span>
+          
+          <code class="ruby">    @minimum = minimum</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="8">
+          <span class="hits">15</span>
+          
+          <code class="ruby">    @penalty = penalty</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="9">
+          <span class="hits">15</span>
+          
+          <code class="ruby">    @log = []</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="10">
+          <span class="hits">15</span>
+          
+          <code class="ruby">    @journeyclass = journeyclass</code>
+        </li>
+      
+        <li class="covered" data-hits="15" data-linenumber="11">
+          <span class="hits">15</span>
+          
+          <code class="ruby">    @entry_station = start</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def in_journey?</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="15">
+          <span class="hits">6</span>
+          
+          <code class="ruby">    !!entry_station</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def start(station)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="19">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    charge = in_journey? ? complete_journey(nil) : 0</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="20">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    @entry_station = station</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="21">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    charge</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def finish(station)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="25">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    charge = complete_journey(station)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="26">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @entry_station = nil</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="27">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    charge</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def complete_journey(station)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="31">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    log &lt;&lt; @journeyclass.new(entry_station, station)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="32">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    fare</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def fare</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="38">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    @log.last.fare(@minimum, @penalty)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">end</code>
@@ -228,8 +561,8 @@
     <h3>lib/oystercard.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>43</b> relevant lines. 
-      <span class="green"><b>43</b> lines covered</span> and
+      <b>30</b> relevant lines. 
+      <span class="green"><b>30</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -240,79 +573,79 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class Oystercard</code>
+          <code class="ruby">require &#39;./lib/journeylog&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  attr_reader :balance, :limit, :entry_station, :list_of_journeys</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  CREDIT_LIMIT = 120</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  MINIMUM_BALANCE = 1</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  MINIMUM_FARE = 1</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  PENALTY = 6</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="2">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Oystercard</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :balance, :limit, :log</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  CREDIT_LIMIT = 120</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  MINIMUM_FARE = 1</code>
+        </li>
+      
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">  def initialize(balance: 0, start: nil, limit: CREDIT_LIMIT, journeyclass: Journey)</code>
+          <code class="ruby">  PENALTY = 6</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="9">
-          <span class="hits">12</span>
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize(balance: 0, start: nil, limit: CREDIT_LIMIT, logclass: Journeylog)</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="11">
+          <span class="hits">9</span>
           
           <code class="ruby">    @balance = balance</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="10">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="9" data-linenumber="12">
+          <span class="hits">9</span>
           
           <code class="ruby">    @limit = limit</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="11">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="9" data-linenumber="13">
+          <span class="hits">9</span>
           
-          <code class="ruby">    @list_of_journeys = []</code>
-        </li>
-      
-        <li class="covered" data-hits="12" data-linenumber="12">
-          <span class="hits">12</span>
-          
-          <code class="ruby">    @journeyclass = journeyclass</code>
-        </li>
-      
-        <li class="covered" data-hits="12" data-linenumber="13">
-          <span class="hits">12</span>
-          
-          <code class="ruby">    @entry_station = start</code>
+          <code class="ruby">    @log = logclass.new(MINIMUM_FARE, PENALTY)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
@@ -363,46 +696,46 @@
           <code class="ruby">  def touch_in(station)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="22">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="3" data-linenumber="22">
+          <span class="hits">3</span>
           
           <code class="ruby">    message = &#39;Balance less than the minimum fare&#39;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="23">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    raise message  if insufficient_balance?</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="24">
+        <li class="covered" data-hits="3" data-linenumber="23">
           <span class="hits">3</span>
           
-          <code class="ruby">    if in_journey?</code>
+          <code class="ruby">    raise message if insufficient_balance?</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="25">
+        <li class="covered" data-hits="2" data-linenumber="24">
           <span class="hits">2</span>
           
-          <code class="ruby">      add_to_list(nil)</code>
+          <code class="ruby">    deduct(log.start(station))</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def touch_out(station)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="28">
           <span class="hits">2</span>
           
-          <code class="ruby">      deduct(fare)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="28">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    @entry_station = station</code>
+          <code class="ruby">    deduct(log.finish(station))</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
@@ -420,67 +753,67 @@
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">  def touch_out(station)</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="32">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    add_to_list(station)</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="33">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    deduct(fare)</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="34">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    @entry_station = nil</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="37">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def in_journey?</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="38">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    !!@entry_station</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="41">
-          <span class="hits">1</span>
-          
           <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def deduct(amount)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="34">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    message = &#39;Not enough money for the journey&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="35">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    raise message if insufficient_money?(amount)</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="36">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    @balance -= amount</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def overloads?(amount)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="40">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @balance + amount &gt; CREDIT_LIMIT</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
@@ -492,154 +825,46 @@
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">  def deduct(amount)</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="44">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    message = &#39;Not enough money for the journey&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="45">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    raise message if insufficient_money?(amount)</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="46">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    @balance -= amount</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="48">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def fare</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="50">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    @list_of_journeys.last.fare(MINIMUM_FARE, PENALTY)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="51">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="52">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def overloads?(amount)</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="54">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    @balance + amount &gt; CREDIT_LIMIT</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
           <code class="ruby">  def insufficient_money?(fare)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="58">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="4" data-linenumber="44">
+          <span class="hits">4</span>
           
           <code class="ruby">    @balance - fare &lt; 0</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="61">
+        <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
           <code class="ruby">  def insufficient_balance?</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="62">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="3" data-linenumber="48">
+          <span class="hits">3</span>
           
-          <code class="ruby">    @balance &lt; MINIMUM_BALANCE</code>
+          <code class="ruby">    @balance &lt; MINIMUM_FARE</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="65">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def add_to_list(exit_station)</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="66">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    @list_of_journeys &lt;&lt; @journeyclass.new(entry_station, exit_station)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">end</code>
@@ -722,8 +947,8 @@
     <h3>spec/journey_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>23</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
+      <b>28</b> relevant lines. 
+      <span class="green"><b>28</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -737,160 +962,160 @@
           <code class="ruby">require &#39;journey&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
           <code class="ruby">describe Journey do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="4">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="5">
+          <span class="hits">5</span>
           
-          <code class="ruby">  let(:fares) { [1, 6] }</code>
+          <code class="ruby">  let(:fares) { [1, 9] }</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="5">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="6" data-linenumber="6">
+          <span class="hits">6</span>
           
-          <code class="ruby">  let(:normal) { described_class.new(&#39;Oxford Circus&#39;, &#39;Aldgate&#39;) }</code>
+          <code class="ruby">  let(:station1) { double(:Station, name: &quot;Oxford Circus&quot;, zone: 1)}</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
+        <li class="covered" data-hits="6" data-linenumber="7">
+          <span class="hits">6</span>
+          
+          <code class="ruby">  let(:station2) { double(:Station, name: &quot;Aldgate&quot;, zone: 6)}</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="8">
+          <span class="hits">5</span>
+          
+          <code class="ruby">  let(:normal) { described_class.new(station1, station2) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="9">
           <span class="hits">2</span>
           
-          <code class="ruby">  let(:nostart) { described_class.new(nil, &#39;Aldgate&#39;) }</code>
+          <code class="ruby">  let(:nostart) { described_class.new(nil, station2) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="7">
+        <li class="covered" data-hits="2" data-linenumber="10">
           <span class="hits">2</span>
           
-          <code class="ruby">  let(:noend) { described_class.new(&#39;Oxford Circus&#39;, nil) }</code>
+          <code class="ruby">  let(:noend) { described_class.new(station1, nil) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="9">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="12">
+          <span class="hits">5</span>
           
           <code class="ruby">  subject { normal }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &#39;has an entry station&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(subject.entry_station).to eq &#39;Oxford Circus&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  it &#39;has an entry station&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;has an exit station&#39; do</code>
+          <code class="ruby">    expect(subject.entry_station).to eq station1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(subject.exit_station).to eq &#39;Aldgate&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;has an exit station&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe(&#39;#fare&#39;) do</code>
+          <code class="ruby">    expect(subject.exit_station).to eq station2</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="20">
           
-          <code class="ruby">    context &#39;when both stations have values&#39; do</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &#39;calculates minimum&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect(subject.fare(*fares)).to eq 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe(&#39;#fare&#39;) do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;returns the journey fare&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      allow(subject).to receive(:expected_fare).and_return(2)</code>
+        </li>
+      
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">    context &#39;when entry station is nil&#39; do</code>
+          <code class="ruby">      expect(subject.fare(*fares)).to eq 2</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="27">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="27">
           
-          <code class="ruby">      subject { nostart }</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
@@ -902,61 +1127,61 @@
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &#39;calculates minimum&#39; do</code>
+          <code class="ruby">    context &#39;when both stations have values&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="30">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(subject.fare(*fares)).to eq 6</code>
+          <code class="ruby">      it &#39;calculates minimum&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">        expect(subject.fare(*fares)).to eq 6</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">    context &#39;when exit station is nil&#39; do</code>
+          <code class="ruby">    context &#39;when entry station is nill/double touch out&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="35">
+        <li class="covered" data-hits="2" data-linenumber="36">
           <span class="hits">2</span>
           
-          <code class="ruby">      subject { noend }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">      subject { nostart }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &#39;calculates minimum&#39; do</code>
+          <code class="ruby">      it &#39;penalty&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(subject.fare(*fares)).to eq 6</code>
+          <code class="ruby">        expect(subject.fare(*fares)).to eq 9</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
@@ -974,10 +1199,893 @@
         <li class="never" data-hits="" data-linenumber="41">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when exit station is nil/double touch in &#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="43">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      subject { noend }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;penalty&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(subject.fare(*fares)).to eq 9</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="353e0fe12666e253a9a101f2ddc4fc68e3bf0c3a">
+  <div class="header">
+    <h3>spec/journeylog_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>72</b> relevant lines. 
+      <span class="green"><b>72</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;journeylog&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe Journeylog do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">    # mock classes</code>
+        </li>
+      
+        <li class="covered" data-hits="11" data-linenumber="5">
+          <span class="hits">11</span>
+          
+          <code class="ruby">    let(:start) { double(:station, name: &#39;Oxford&#39;, zone: 4) }</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="6">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    let(:finish) { double(:station, name: &#39;Euston&#39;, zone: 3) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="8">
+          <span class="hits">16</span>
+          
+          <code class="ruby">    let(:journey) { double(:journey, fare: 3)}</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="9">
+          <span class="hits">16</span>
+          
+          <code class="ruby">    let(:journeyclass) { journeyclass = double(:Journey, new: journey) }</code>
+        </li>
+      
+        <li class="covered" data-hits="16" data-linenumber="10">
+          <span class="hits">16</span>
+          
+          <code class="ruby">    let(:fares) { [1, 6] }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    # test subjects</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="13">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    let(:out_journey) { described_class.new(*fares, journeyclass: journeyclass) }</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="14">
+          <span class="hits">9</span>
+          
+          <code class="ruby">    let(:in_journey) { described_class.new(*fares, journeyclass: journeyclass, start: start) }</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="15">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    subject { out_journey }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &#39;#initialize&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      context &#39;when created&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;has empty log&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(subject.log).to eq Array.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;has correct fare information&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect([subject.minimum, subject.penalty]).to eq fares</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="28">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &#39;#in_journey?&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      context &#39;when in journey&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="33">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        subject { in_journey }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;is true&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(subject).to be_in_journey</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      context &#39;when not in journey&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="41">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        subject { out_journey }</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;is false&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(subject).to_not be_in_journey</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &#39;#start&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      before(:each) {</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="51">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        allow(subject).to receive(:complete_journey).and_return(5)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">      }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      context &#39;when starting&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="55">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        subject { out_journey }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;remembers entry station on touch in&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          subject.start(start)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(subject.entry_station).to eq start</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      context &#39;when starting normal journey&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="64">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        subject { out_journey }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;charges fare of 0&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(subject.start(start)).to eq 0</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      context &#39;when touching in twice&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="72">
+          <span class="hits">3</span>
+          
+          <code class="ruby">        subject { in_journey }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="74">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;charges non-zero fare&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(subject.start(start)).to eq 5</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;passes nil to complete_journey&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby">          # if it doesn&#39;t happen shows error</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(subject).to receive(:complete_journey).with(nil)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          subject.start(start)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &#39;#finish&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="87">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      before(:each) {</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="88">
+          <span class="hits">3</span>
+          
+          <code class="ruby">        allow(subject).to receive(:complete_journey).and_return(5)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="89">
+          
+          
+          <code class="ruby">      }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="90">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="91">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      context &#39;when finishing&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="92">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;clears entry station&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="93">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          subject.finish(finish)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(subject.entry_station).to be_nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="95">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="98">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      context &#39;when finishing normal journey&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="99">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        subject { in_journey }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="100">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="101">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;charges fare&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="102">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(subject.finish(finish)).to eq 5</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="103">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="104">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="106">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      context &#39;when touching out twice&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="107">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        subject { out_journey }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="108">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="109">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        it &#39;charges fare&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="110">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(subject.finish(finish)).to eq 5</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="111">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="112">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="113">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="114">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="115">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;#complete_journey&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="116">
+          <span class="hits">5</span>
+          
+          <code class="ruby">    subject { in_journey }</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="117">
+          <span class="hits">5</span>
+          
+          <code class="ruby">    after(:each) { subject.complete_journey(finish) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="118">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="119">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;logs journey&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="120">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject.complete_journey(finish)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="121">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(subject.log.last).to eq journey</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="122">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="123">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="124">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;returns fare&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="125">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(subject.complete_journey(finish)).to eq 3</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="126">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="128">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;passes fares to journey object&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="129">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(journey).to receive(:fare).with(*fares)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="130">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject.complete_journey(finish)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="131">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="132">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="133">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;passes correct arguments to journey instance&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="134">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(journeyclass).to receive(:new).with(start, finish)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="135">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="136">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="137">
           
           
           <code class="ruby">end</code>
@@ -993,8 +2101,8 @@
     <h3>spec/oystercard_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>53</b> relevant lines. 
-      <span class="green"><b>53</b> lines covered</span> and
+      <b>41</b> relevant lines. 
+      <span class="green"><b>41</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1032,22 +2140,22 @@
           <code class="ruby">  # mock classes</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="6">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="6" data-linenumber="6">
+          <span class="hits">6</span>
           
           <code class="ruby">  let(:station) { station = double(:station, name: &#39;Oxford&#39;, zone: 4) }</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="7">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="10" data-linenumber="7">
+          <span class="hits">10</span>
           
-          <code class="ruby">  let(:journey) { double(:journey, fare: 3)}</code>
+          <code class="ruby">  let(:log) { double(:log, start: 0, finish: 5)}</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="8">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="10" data-linenumber="8">
+          <span class="hits">10</span>
           
-          <code class="ruby">  let(:journeyclass) { journeyclass = double(:Journey, new: journey) }</code>
+          <code class="ruby">  let(:logclass) { double(:Log, new: log) }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -1062,26 +2170,26 @@
           <code class="ruby">  # test subjects</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="11">
+        <li class="covered" data-hits="6" data-linenumber="11">
+          <span class="hits">6</span>
+          
+          <code class="ruby">  let(:blank) { described_class.new(logclass: logclass) }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  let(:touched_out) { described_class.new(logclass: logclass, balance: 50) }</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="13">
           <span class="hits">5</span>
           
-          <code class="ruby">  let(:blank) { described_class.new(journeyclass: journeyclass) }</code>
+          <code class="ruby">  let(:touched_in) { described_class.new(logclass: logclass, balance: 50) }</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="12">
-          <span class="hits">3</span>
-          
-          <code class="ruby">  let(:touched_out) { described_class.new(journeyclass: journeyclass, balance: 50) }</code>
-        </li>
-      
-        <li class="covered" data-hits="7" data-linenumber="13">
-          <span class="hits">7</span>
-          
-          <code class="ruby">  let(:touched_in) { described_class.new(journeyclass: journeyclass, balance: 50, start: station) }</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="14">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="14">
+          <span class="hits">5</span>
           
           <code class="ruby">  subject { blank }</code>
         </li>
@@ -1101,7 +2209,7 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;check if oystercard has a balance equal to 0&#39; do</code>
+          <code class="ruby">    it &#39;has a balance equal to 0&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="18">
@@ -1119,127 +2227,127 @@
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;has log instance&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;#top_up&#39; do</code>
+          <code class="ruby">      expect(subject.log).to eq log</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;checking top-up&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      subject.top_up(5)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(subject.balance).to eq 5</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;raises and error when amount is above limit&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      maximum_balance = Oystercard::CREDIT_LIMIT</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="30">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      subject.top_up(maximum_balance)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="31">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      expect { subject.top_up(1) }.to raise_error RuntimeError</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="35">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;#journey status&#39; do</code>
+          <code class="ruby">  describe &#39;#top_up&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="36">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          <code class="ruby">    subject { touched_out }</code>
+          <code class="ruby">    it &#39;checking top-up&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject.top_up(5)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(subject.balance).to eq 5</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;raises and error when amount is above limit&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      maximum_balance = Oystercard::CREDIT_LIMIT</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      subject.top_up(maximum_balance)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="35">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      expect { subject.top_up(1) }.to raise_error RuntimeError</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="38">
           
-          <code class="ruby">    it &#39;initial status not in journey&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(subject.in_journey?).to eq false</code>
+          <code class="ruby">  describe &#39;#touch in&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="covered" data-hits="3" data-linenumber="40">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">    subject { touched_in }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
@@ -1251,322 +2359,190 @@
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;changes status into &quot;in_journey&quot; after touch in&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="43">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      subject.touch_in(station)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(subject.in_journey?).to eq true</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="46">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="47">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="48">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &#39;#touch in&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="49">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    subject { touched_in }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="50">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          
           <code class="ruby">    context &#39;when card is empty&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="52">
+        <li class="covered" data-hits="2" data-linenumber="43">
           <span class="hits">2</span>
           
           <code class="ruby">      subject { blank }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="54">
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
           <code class="ruby">      it &#39;raises an error at touch in if minimum balance is less than 1&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="55">
+        <li class="covered" data-hits="2" data-linenumber="46">
           <span class="hits">2</span>
           
           <code class="ruby">        expect { subject.touch_in(station) }.to raise_error RuntimeError</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &#39;when touching in&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;charges fare&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="52">
+          <span class="hits">4</span>
+          
+          <code class="ruby">        expect { subject.touch_in(station) }.to change { subject.balance }.by(0)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;passes station to log&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(log).to receive(:start).with(station)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        subject.touch_in(station)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="59">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;remembers entry station on touch in&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="60">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      subject.touch_in(station)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="61">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(subject.entry_station).to eq station</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    context &#39;touch in twice charge penalty&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="65">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &#39;charges penalty&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="66">
-          <span class="hits">4</span>
-          
-          <code class="ruby">        expect { subject.touch_in(station) }.to change { subject.balance }.by(-3)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
-          
-          
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="60">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="71">
+        <li class="covered" data-hits="1" data-linenumber="62">
           <span class="hits">1</span>
           
           <code class="ruby">  describe &#39;#touch out&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="72">
+        <li class="covered" data-hits="3" data-linenumber="63">
           <span class="hits">3</span>
           
           <code class="ruby">    subject  { touched_in }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="73">
+        <li class="covered" data-hits="1" data-linenumber="64">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;changes the balance by the minimum fare&#39; do</code>
+          <code class="ruby">    it &#39;charges fare&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="74">
+        <li class="covered" data-hits="4" data-linenumber="65">
           <span class="hits">4</span>
           
-          <code class="ruby">      expect { subject.touch_out(station) }.to change { subject.balance }.by(-3)</code>
+          <code class="ruby">      expect { subject.touch_out(station) }.to change { subject.balance }.by(-5)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="77">
+        <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;makes entry station nil on touch out&#39; do</code>
+          <code class="ruby">    it &#39;passes station to finish&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="78">
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(log).to receive(:finish).with(station)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
           <span class="hits">1</span>
           
           <code class="ruby">      subject.touch_out(station)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="79">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(subject.entry_station).to eq nil</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="71">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="84">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &#39;#list_of_journeys&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="85">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    subject  { touched_in }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="86">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;should have an empty list of journeys by default&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="87">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(subject.list_of_journeys).to eq([])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="88">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="89">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="90">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;should store a journey&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="91">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      subject.touch_out(station)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="92">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(subject.list_of_journeys).to eq([journey])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="93">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="94">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="95">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">end</code>
